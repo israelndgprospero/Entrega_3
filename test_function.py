@@ -15,9 +15,8 @@ class Usuario: # Programa da última entrega
 
     def verificar_senha(self, senha):
         return self.__senha_hash == self.__encriptografar(senha)
-
-
-def main() -> None:
+    
+def test_funcao() -> None:
     # Criando usuário correto
     usuario = Usuario("Gabriel", "admin123", "administrador")
 
@@ -32,10 +31,9 @@ def main() -> None:
         file.write(senha_digitada_hash)
 
     # Comparando a senha digitada com a senha correta e o hash da senha digitada com o hash da senha correta
+    senhas_conferem = False
     if senha_digitada_hash == usuario.senha_hash:
-        print('As senhas conferem')
+        senhas_conferem = True
     else:
-        print('As senhas NÃO conferem')
+        pass
 
-if __name__ == '__main__':
-    main()
